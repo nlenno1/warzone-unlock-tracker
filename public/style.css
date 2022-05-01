@@ -1,0 +1,7 @@
+.content {
+    height: calc(100vh - 304px);
+}
+
+.btn-large {
+    margin: 5px 0;
+}
