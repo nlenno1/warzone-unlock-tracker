@@ -6,7 +6,7 @@ export default function Navbar () {
             <nav>
                 <div className="nav-wrapper">
                     <a href="#" className="brand-logo">Warzone Unlock Tracker</a>
-                    <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons"><i class="fa-solid fa-bars"></i></i></a>
+                    <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons"><i className="fa-solid fa-bars"></i></i></a>
                     <ul className="right hide-on-med-and-down">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About</a></li>
