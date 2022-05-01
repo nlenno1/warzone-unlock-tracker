@@ -1,19 +1,33 @@
 import React from "react"
 
+import { WeaponData } from "../data.js";
+
+function getGameTypeString (string) {
+    let newString = string.slice(27, -4)
+    return newString
+}
+
 export default function WeaponDisplay () {
     return (
-        <div className="container">
-            <h5>Click a weapon type to jump to it</h5>
-            <div>
-                <a className="waves-effect waves-light btn-large">Assault Rifles (AR)</a>
-                <a className="waves-effect waves-light btn-large">Submachine Guns (SMG)</a>
-                <a className="waves-effect waves-light btn-large">Light Machine Guns (LMG)</a>
-                <a className="waves-effect waves-light btn-large">Shotguns</a>
-                <a className="waves-effect waves-light btn-large">Precision Rifles</a>
-                <a className="waves-effect waves-light btn-large">Sniper Rifles</a>
-                <a className="waves-effect waves-light btn-large">Pistols</a>
-                <a className="waves-effect waves-light btn-large">Launchers</a>
-                <a className="waves-effect waves-light btn-large">Melee</a>
+        <div className="weapons-display">
+            <h5>View All Weapons Below</h5>
+            <div className="weaponsDisplayContainer">
+            {WeaponData.map((data,key) => {
+                return (
+                    <div className="col s12 m7">
+                        <div key={key} className="card horizontal">
+                            <div className="card-stacked">
+                                <div className="card-content">
+                                    <p>Name : {data.name}</p>
+                                    <p>Category : {data.category}</p>
+                                    <p>Game : {getGameTypeString(data.game_version_img)}</p>
+                                    <a href={data.data_link} target="_blank">More Information</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            )}
             </div>
         </div>
     )
